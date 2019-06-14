@@ -89,10 +89,10 @@ def main_execute():
     print("Here we are in main_execute for example run_unsuper")
     print
 
-    #properties = pd.DataFrame.from_csv("create-sim-data/default_parameters_sim_species_prop.csv")
+    #properties = pd.read_csv("create-sim-data/default_parameters_sim_species_prop.csv")
 
-    #concentration = pd.DataFrame.from_csv("../create-sim-data/simulated_counts.csv")
-    #concentration = pd.DataFrame.from_csv("create-sim-data/default_parameters_sim_gene_counts.csv")
+    #concentration = pd.read_csv("../create-sim-data/simulated_counts.csv")
+    #concentration = pd.read_csv("create-sim-data/default_parameters_sim_gene_counts.csv")
 
     #conc_row_sum = concentration.copy()
     #conc_col_sum = concentration.copy()
@@ -113,10 +113,11 @@ def main_execute():
     #x_arr = np.array(concentration)
     #np.savetxt("row_col_normalized_concentration.csv", x_arr, delimiter = ",")
 
-    #x_arr = pd.DataFrame.from_csv("row_col_normalized_concentration.csv")
+    #x_arr = pd.read_csv("row_col_normalized_concentration.csv")
     #x_arr = Imputer().fit_transform(x_arr)
-    #raw = pd.DataFrame.from_csv('data/pseudomonas.tsv', sep='\t').transpose()
-    raw = pd.DataFrame.from_csv('/mnt/pseudomonas.tsv', sep='\t')
+    raw = pd.read_csv('data/pseudomonas.tsv', sep='\t', index_col=0).transpose()
+    print raw
+    #raw = pd.read_csv('/mnt/pseudomonas.tsv', sep='\t', index_col=0)
     y = np.array(raw)
     for i in range(raw.shape[0]):
         y[i,:] = y[i,:] / np.sum(y[i,:])
@@ -124,22 +125,22 @@ def main_execute():
     x_arr = x.copy()
 
     """
-    ae_node_assign = pd.DataFrame.from_csv('sample-models/only_node_assignment_per_gene_ae.csv', sep = ',')
+    ae_node_assign = pd.read_csv('sample-models/only_node_assignment_per_gene_ae.csv', sep = ',', index_col=0)
     ae_nodes = np.array(ae_node_assign)
 
-    ae_raw = pd.DataFrame.from_csv('pseudomonas/ae_codes.csv', sep=',').transpose()
+    ae_raw = pd.read_csv('pseudomonas/ae_codes.csv', sep=',', index_col=0).transpose()
     x_ae_codes = np.array(ae_raw)
 
-    ae_weights_raw = pd.DataFrame.from_csv('pseudomonas/ae_weights.csv', sep = ',')
-    ae_weights_raw_t = pd.DataFrame.from_csv('pseudomonas/ae_weights.csv', sep = ',').transpose()
+    ae_weights_raw = pd.read_csv('pseudomonas/ae_weights.csv', sep = ',', index_col=0)
+    ae_weights_raw_t = pd.read_csv('pseudomonas/ae_weights.csv', sep = ',', index_col=0).transpose()
     x_ae_weights = np.array(ae_weights_raw)
     x_ae_weights_t = np.array(ae_weights_raw_t)
     """
 
-    ae_raw = pd.DataFrame.from_csv('pseudomonas/ae_codes.csv', sep=',')
+    ae_raw = pd.read_csv('pseudomonas/ae_codes.csv', sep=',', index_col=0)
     x_ae_codes = np.array(ae_raw)
 
-    sample_labels = pd.read_csv('data/pseudo_sample_names.csv', sep = ',', header = None)
+    sample_labels = pd.read_csv('data/pseudo_sample_names.csv', sep = ',', header = None, index_col=0)
     np_labels = np.array(sample_labels)
 
     sample_colors = cm.rainbow(np.linspace(0, 1, 950))
@@ -212,14 +213,14 @@ def main_execute():
 <<<<<<< HEAD
     tsne_default = TSNE(n_components = 2)
     tsne_default_t = tsne_default.fit_transform(x_arr)
-    
+
     plt.scatter(tsne_default_t[:, 0], tsne_default_t[:, 1])
     plt.savefig("tsne_default_2d.png")
 
     #tsne_default_df = pd.DataFrame(tsne_default)
     #tsne_default_t_df = pd.DataFrame(tsne_default_t)
 
-    
+
     #tsne_default_df.to_csv("tsne_default_model.csv")
     #tsne_default_t_df.to_csv("tsne_default_trans_model.csv")
 =======

@@ -6,14 +6,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn import decomposition
-from sklearn.cross_validation import train_test_split
-from sklearn.cross_validation import StratifiedShuffleSplit
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.decomposition import PCA
-from sklearn.grid_search import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
