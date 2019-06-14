@@ -58,7 +58,7 @@ def run_kpca(properties, concentration):
 
 def run_autoencode(properties, concentration):
 
-    ae = Sequential()
+    ae = Sequential() # sequential model (keras)
     ae.add(Dense(10, input_dim = concentration.shape[1]))
     ae.add(Activation('relu'))
     ae.add(Dense(concentration.shape[1]))
@@ -89,10 +89,10 @@ def main_execute():
     print("Here we are in main_execute for example run_unsuper")
     print
 
-    #properties = pd.read_csv("create-sim-data/default_parameters_sim_species_prop.csv")
+    #properties = pd.read_csv("create-sim-data/default_parameters_sim_species_prop.csv", index_col=0)
 
-    #concentration = pd.read_csv("../create-sim-data/simulated_counts.csv")
-    #concentration = pd.read_csv("create-sim-data/default_parameters_sim_gene_counts.csv")
+    #concentration = pd.read_csv("../create-sim-data/simulated_counts.csv"), index_col=0
+    #concentration = pd.read_csv("create-sim-data/default_parameters_sim_gene_counts.csv", index_col=0)
 
     #conc_row_sum = concentration.copy()
     #conc_col_sum = concentration.copy()
@@ -113,10 +113,9 @@ def main_execute():
     #x_arr = np.array(concentration)
     #np.savetxt("row_col_normalized_concentration.csv", x_arr, delimiter = ",")
 
-    #x_arr = pd.read_csv("row_col_normalized_concentration.csv")
+    #x_arr = pd.read_csv("row_col_normalized_concentration.csv", index_col=0)
     #x_arr = Imputer().fit_transform(x_arr)
     raw = pd.read_csv('data/pseudomonas.tsv', sep='\t', index_col=0).transpose()
-    print raw
     #raw = pd.read_csv('/mnt/pseudomonas.tsv', sep='\t', index_col=0)
     y = np.array(raw)
     for i in range(raw.shape[0]):
