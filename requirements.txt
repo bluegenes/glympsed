@@ -1,0 +1,9 @@
+numpy
+scipy
+pandas
+keras
+tensorflow
+palettable
+sklearn
+pytest
+matplotlib

@@ -209,7 +209,7 @@ def main_execute():
     print
     print("Finished first 1k...")
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
     tsne_default = TSNE(n_components = 2)
     tsne_default_t = tsne_default.fit_transform(x_arr)
 
@@ -222,7 +222,7 @@ def main_execute():
 
     #tsne_default_df.to_csv("tsne_default_model.csv")
     #tsne_default_t_df.to_csv("tsne_default_trans_model.csv")
-=======
+#=======
     plt.scatter(tsne_default[1000:1999, 0], tsne_default[1000:1999, 1], c = ae_nodes[1000:1999])
     plt.colorbar(ticks = range(50))
     plt.savefig("sample-models/may4_tsne_second1k_2d.png")
@@ -230,7 +230,7 @@ def main_execute():
 
     print
     print("Finished second 1k...")
->>>>>>> 7ce053820ce87bbc45b6a1c029e47da7eb12c605
+#>>>>>>> 7ce053820ce87bbc45b6a1c029e47da7eb12c605
 
     plt.scatter(tsne_default[2000:2999, 0], tsne_default[2000:2999, 1], c = ae_nodes[2000:2999])
     plt.colorbar(ticks = range(50))
