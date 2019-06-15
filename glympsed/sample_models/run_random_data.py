@@ -5,10 +5,7 @@ from scipy import special
 import numpy as np
 import pandas as pd
 
-# point to sample-models/ dir for import
-sys.path.insert(0, 'sample-models')
-from run_random_data import *
-from pca_kmeans import *
+from .pca_kmeans import *
 
 def do_random_data():
     print("Calling sample file for generating data...")

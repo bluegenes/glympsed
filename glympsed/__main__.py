@@ -5,13 +5,10 @@ from scipy import special
 import numpy as np
 import pandas as pd
 
-#sys.path.insert(0, 'create-sim-data')
-from simulate_counts import *
-# point to sample-models/ dir for import
-#sys.path.insert(0, 'sample-models')
-from run_random_data import *
-from pca_kmeans import *
-from run_unsupervised import *
+from .create_sim_data.simulate_counts import *
+from .sample_models.run_random_data import *
+from .sample_models.pca_kmeans import *
+from .sample_models.run_unsupervised import *
 
 def main(args = None):
     """Main - serves project"""

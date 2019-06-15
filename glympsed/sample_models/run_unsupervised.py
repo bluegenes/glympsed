@@ -21,8 +21,8 @@ import matplotlib.cm as cm
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import Imputer
 
-from run_random_data import *
-from pca_kmeans import *
+from .run_random_data import *
+from .pca_kmeans import *
 
 def unsuper_linreg(X, properties):
     lm = linear_model.LinearRegression()

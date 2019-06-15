@@ -209,9 +209,9 @@ if __name__ == "__main__":
 		species_prop.to_csv(output_filename + "_sim_species_prop.csv")
 
 	except IOError as e:
-		print "I/O error({0}): {1}".format(e.errno, e.strerror)
+		print("I/O error({0}): {1}".format(e.errno, e.strerror))
 	except ValueError:
-		print "Some value error."
+		print("Some value error.")
 	except:
-		print "Unexpected error:", sys.exc_info()[0]
+		print("Unexpected error:", sys.exc_info()[0])
 		raise
